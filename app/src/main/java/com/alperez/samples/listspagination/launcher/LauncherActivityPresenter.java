@@ -3,6 +3,7 @@ package com.alperez.samples.listspagination.launcher;
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.support.v7.app.AppCompatActivity;
 
 import com.alperez.samples.listspagination.BuildConfig;
 import com.alperez.samples.listspagination.utils.AsyncTaskCompat;
@@ -74,18 +75,22 @@ public class LauncherActivityPresenter extends BasePresenter<LauncherScreenView>
                 JSONArray jItems = new JSONArray(new String(bos.toByteArray()));
 
                 List<LauncherScreenItem> data = new ArrayList<>(jItems.length());
-                ClassLoader cLoader = ClassLoader.getSystemClassLoader();
                 for (int i=0; i<jItems.length(); i++) {
-                    JSONObject jItem = jItems.getJSONObject(i);
-                    data.add(LauncherScreenItem.builder()
-                            .setTitle(jItem.getString("title"))
-                            .setSubtitle(jItem.optString("subtitle", null))
-                            .setDescription(jItem.optString("description", null))
-                            .setActivityClass((Class<? extends Activity>)cLoader.loadClass(jItem.getString("screenClassName")))
-                            .build());
+                    try {
+                        JSONObject jItem = jItems.getJSONObject(i);
+                        data.add(LauncherScreenItem.builder()
+                                .setTitle(jItem.getString("title"))
+                                .setSubtitle(jItem.optString("subtitle", null))
+                                .setDescription(jItem.optString("description", null))
+                                .setActivityClass((Class<? extends AppCompatActivity>) Class.forName(jItem.getString("screenClassName")))
+                                .build());
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
                 return data;
             } catch (Exception e) {
+                e.printStackTrace();
                 if (BuildConfig.DEBUG) try { Thread.sleep(1350); } catch (InterruptedException e1) {}
                 error = e;
                 return null;

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 import android.widget.Toast;
 
 import com.alperez.samples.listspagination.R;
@@ -32,6 +33,7 @@ public class LauncherActivity extends AppCompatActivity implements LauncherScree
 
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
         binding.recycler.addItemDecoration(new UniformVerticalRecyclerItemSpace(getResources().getDimensionPixelSize(R.dimen.list_card_item_space)));
+        binding.recycler.setOverScrollMode(View.OVER_SCROLL_NEVER);
 
         presenter = new LauncherActivityPresenter(this, getResources());
         presenter.initializeView();
