@@ -5,8 +5,8 @@ import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 
 import com.alperez.samples.listspagination.BuildConfig;
-import com.alperez.samples.listspagination.utils.AsyncTaskCompat;
 import com.alperez.samples.listspagination.utils.BasePresenter;
+import com.alperez.utils.AsyncTaskCompat;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

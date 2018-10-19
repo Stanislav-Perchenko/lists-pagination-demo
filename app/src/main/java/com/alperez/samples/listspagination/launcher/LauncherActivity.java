@@ -12,7 +12,8 @@ import android.widget.Toast;
 import com.alperez.samples.listspagination.R;
 import com.alperez.samples.listspagination.databinding.ActivityLauncherBinding;
 import com.alperez.samples.listspagination.utils.CommErrorEmulator;
-import com.alperez.samples.listspagination.utils.UniformVerticalRecyclerItemSpace;
+import com.alperez.utils.UniformVerticalRecyclerItemSpace;
+
 
 import java.util.Collection;
 

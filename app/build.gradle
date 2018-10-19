@@ -42,6 +42,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':utils')
+    implementation project(':listpagination')
 
     implementation "com.android.support:support-v4:${rootProject.supportLibVersion}"
     implementation "com.android.support:appcompat-v7:${rootProject.supportLibVersion}"

@@ -6,7 +6,8 @@ import android.os.Build;
 
 /**
  * Created by stanislav.perchenko on 3/29/2016.
- */public abstract class AsyncTaskCompat<T, G, F> extends AsyncTask<T, G, F> {
+ */
+public abstract class AsyncTaskCompat<T, G, F> extends AsyncTask<T, G, F> {
 
     @SuppressLint("NewApi")
     public void safeExecute(T... params) {
