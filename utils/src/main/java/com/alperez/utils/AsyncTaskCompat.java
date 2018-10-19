@@ -1,4 +1,4 @@
-package com.alperez.samples.listspagination.utils;
+package com.alperez.utils;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;

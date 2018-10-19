@@ -1,6 +1,5 @@
 package com.alperez.samples.listspagination.launcher;
 
-import android.app.Activity;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;

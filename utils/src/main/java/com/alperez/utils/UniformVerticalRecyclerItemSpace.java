@@ -1,4 +1,4 @@
-package com.alperez.samples.listspagination.utils;
+package com.alperez.utils;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
