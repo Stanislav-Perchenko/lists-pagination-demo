@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  LoadMoreView  -->
+    <declare-styleable name="LoadMoreView">
+        <attr name="progressResId" format="reference"/>
+        <attr name="reloadResId" format="reference"/>
+        <attr name="endmsgResId" format="reference"/>
+    </declare-styleable>
+
+
+</resources>
