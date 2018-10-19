@@ -12,4 +12,5 @@
     <string name="description_safe_swipe_cool">This is my implementation of the swipe-to-refresh widget, which allows scrollable containers as a content (based on the support library code).</string>
 
     <string name="item_page_content" formatted="false">Page #%d</string>
+    <string name="empty"></string>
 </resources>

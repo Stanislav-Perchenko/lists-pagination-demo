@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView android:id="@+id/ic_arrow"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_arrow_right"/>
+
+    <TextView android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/ic_arrow"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        tools:text="dsfkjsdfksdfhsdkfsdf sldfj lsdf lsdh fjk sdhfsdhl fsdlf sdlf"/>
+
+    <TextView android:id="@+id/txt_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/txt_title"
+        android:layout_toLeftOf="@id/ic_arrow"
+        android:layout_marginTop="6dp"
+        android:textSize="13sp"
+        android:textColor="#565656"
+        tools:text="sdfjsdgh fsdkfh sdkjfh sdjkfh sdkh fksdh fkjsdh fsdjklh fkl sdhfklsdf"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_subtitle"
+        android:layout_marginTop="8dp"
+        android:textColor="#000"
+        android:textSize="12sp"
+        tools:text="Isdf dfsdhf oidhfaiohf oasdihfash dfoiajf wbfui qw oidjoqwdk [qwopkdoqw j dqjwidj qwodj e hfljd;jefhwefio jqepdfj ef hwe hfejf ejfowej fl jwefkpdfk we;ofj oejfkek f ; ewjfwej; fjwelkfjejf; wefklwf wef  jef jewejf jwkf jweklfj ;ejf ;weljf ;wf"/>
+
+
+</RelativeLayout>
