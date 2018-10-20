@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="pag_load_more_progress" type="id"/>
+    <item name="pag_load_more_reload" type="id"/>
+    <item name="pag_load_more_end" type="id"/>
+</resources>
