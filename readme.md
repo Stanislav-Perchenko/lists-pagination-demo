@@ -9,7 +9,7 @@ The project is splited on several modules. Module "listpagination" contains all 
 
 
 The main "app" module contains launcher screen and demo framework for the paginated lists, which includes:
-demo activities (*BaseDemoActivit*, ListPaginationDemoActivity, RecyclerPaginationDemoActivity);
+demo activities (**BaseDemoActivity**, ListPaginationDemoActivity, RecyclerPaginationDemoActivity);
 demo adapters (MyListInnerAdapter, MyPaginatedRecyclerAdapter);
 test data source (ListItemModel, PaginatedPresenter, DelayedDataSourceEmulator, CommunicationErrorEmulator).
 
