@@ -5,18 +5,19 @@ The same approach is used in the SDK to support Headers/Footers (by the HeaderVi
 
 For the RecyclerView case the abstract descendant of the RecyclerAdapter is implemented to support "Load more" logic. This adapter must be extended by a final adapter implementation.
 
-The project is splited on several modules. Module "listpagination" contains all classes and resources which essentially implement pagination pagination pattern: PaginatedListAdapter, PaginatedRecyclerAdapter, LoadMoreView
-
+The project is splited on several modules. Module "listpagination" contains all classes and resources which essentially implement pagination pagination pattern: **PaginatedListAdapter**, **PaginatedRecyclerAdapter**, **LoadMoreView**.
 
 The main "app" module contains launcher screen and demo framework for the paginated lists, which includes:
-demo activities (**BaseDemoActivity**, ListPaginationDemoActivity, RecyclerPaginationDemoActivity);
-demo adapters (MyListInnerAdapter, MyPaginatedRecyclerAdapter);
-test data source (ListItemModel, PaginatedPresenter, DelayedDataSourceEmulator, CommunicationErrorEmulator).
+- demo activities (**BaseDemoActivity**, **ListPaginationDemoActivity**, **RecyclerPaginationDemoActivity**)
+- demo adapters (**MyListInnerAdapter**, **MyPaginatedRecyclerAdapter**)
+- test data source (**ListItemModel**, **PaginatedPresenter**, **DelayedDataSourceEmulator**, **CommunicationErrorEmulator**).
+
+
 
 
 This project also demonstrates the implementation of MVP application architecture pattern see combination of:
-- LauncherActivity+LauncherActivityPresenter+LauncherScreenView
-- ListPaginationDemoActivity+RecyclerPaginationDemoActivity+IPaginatedListView+PaginatedPresenter)
+- LauncherActivity + LauncherActivityPresenter + LauncherScreenView
+- ListPaginationDemoActivity + RecyclerPaginationDemoActivity + IPaginatedListView+PaginatedPresenter)
 
 It also demonstrates using of the Android Data binding library:
 - LauncherActivity + activity_launcher.xml
