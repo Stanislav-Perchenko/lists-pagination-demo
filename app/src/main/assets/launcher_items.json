@@ -3,12 +3,16 @@
     "title": "ListView pagination",
     "subtitle": "Paginated list implemented based on the ListView",
     "description": "This implementation uses the wrapper adapter which implements the WrapperListAdapter interface and accepts any kind of BaseAdapter as content. It adds and manages \"Load More\" view the same way the HeaderViewListAdapter does.",
-    "screenClassName": "com.alperez.samples.listspagination.testactivity.ListPaginationActivity"
-  },
-  {
+    "screenClassName": "com.alperez.samples.listspagination.testactivity.ListPaginationDemoActivity"
+  },{
     "title": "RecyclerView pagination",
     "subtitle": "Paginated list implemented based on the RecyclerView",
     "description": "This implementation based on the abstract PaginatedRecyclerAdapter which must be used as the parent of final adapters to add and manage \"Load More\" view below content items",
-    "screenClassName": "com.alperez.samples.listspagination.testactivity.RecyclerPaginationActivity"
+    "screenClassName": "com.alperez.samples.listspagination.testactivity.RecyclerPaginationDemoActivity"
+  },{
+    "title": "Fail test",
+    "subtitle": "Example with no implementation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "screenClassName": "????????"
   }
 ]

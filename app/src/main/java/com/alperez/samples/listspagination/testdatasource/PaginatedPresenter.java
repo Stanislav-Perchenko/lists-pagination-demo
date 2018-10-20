@@ -14,18 +14,18 @@ import java.util.List;
 public class PaginatedPresenter {
 
     private final int pageSize;
-    private final PaginatedListView<ListItemModel> view;
-    private final DataSource<ListItemModel> dataSource;
+    private final IPaginatedListView<ListItemModel> view;
+    private final DelayedDataSourceEmulator<ListItemModel> dataSource;
 
 
 
     private boolean isLoading;
     private int currentPageNumber;
 
-    public PaginatedPresenter(Context ctx, int pageSize, int totalDataItems, PaginatedListView<ListItemModel> view) {
+    public PaginatedPresenter(Context ctx, int pageSize, int totalDataItems, IPaginatedListView<ListItemModel> view) {
         this.pageSize = pageSize;
         this.view = view;
-        dataSource = new DataSource<ListItemModel>(ctx, totalDataItems) {
+        dataSource = new DelayedDataSourceEmulator<ListItemModel>(ctx, totalDataItems) {
             @Override
             public ListItemModel buildDataItem(final int nPage, final int pageSize, final int inPageIndex) {
                 return new ListItemModel() {
@@ -80,7 +80,7 @@ public class PaginatedPresenter {
     }
 
     /**********************************************************************************************/
-    private final DataSource.OnDataLoadListener loadListener = new DataSource.OnDataLoadListener<ListItemModel>() {
+    private final DelayedDataSourceEmulator.OnDataLoadListener loadListener = new DelayedDataSourceEmulator.OnDataLoadListener<ListItemModel>() {
         @Override
         public void onDataLoaded(int nPage, List<ListItemModel> items) {
             currentPageNumber = nPage + 1;

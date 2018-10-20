@@ -9,8 +9,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alperez.samples.listspagination.GlobalConstants;
 import com.alperez.samples.listspagination.R;
 import com.alperez.samples.listspagination.databinding.ActivityLauncherBinding;
+import com.alperez.samples.listspagination.testactivity.BaseDemoActivity;
 import com.alperez.samples.listspagination.utils.CommErrorEmulator;
 import com.alperez.utils.UniformVerticalRecyclerItemSpace;
 
@@ -42,6 +44,14 @@ public class LauncherActivity extends AppCompatActivity implements LauncherScree
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (binding.swConnFailure.isChecked() != CommErrorEmulator.getInstance().isError()) {
+            binding.swConnFailure.setChecked(CommErrorEmulator.getInstance().isError());
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         presenter.release();
@@ -55,7 +65,12 @@ public class LauncherActivity extends AppCompatActivity implements LauncherScree
             binding.setAdapter(new LauncherAdapter(this, launcherItems) {
                 @Override
                 public void onItemClicked(int position, LauncherScreenItem item) {
-                    startActivity(new Intent(LauncherActivity.this, item.activityClass()));
+                    if (item.activityClass() != null) {
+                        Intent launcher = new Intent(LauncherActivity.this, item.activityClass());
+                        launcher.putExtra(GlobalConstants.ARG_SCREEN_TITLE, item.title());
+                        launcher.putExtra(GlobalConstants.ARG_SCREEN_SUBTITLE, item.subtitle());
+                        startActivity(launcher);
+                    }
                 }
             });
         } else {

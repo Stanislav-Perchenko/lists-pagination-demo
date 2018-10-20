@@ -8,7 +8,7 @@ import java.util.List;
  * Created by stanislav.perchenko on 4/9/2018.
  */
 
-public interface PaginatedListView<T> {
+public interface IPaginatedListView<T> {
     void onLoadedFirst(List<T> data, boolean isFinished);
     void onLoadedMore(List<T> data, boolean isFinished);
     void onLoadFirstError(AppError reason);

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListPagination</string>
+    <string name="end_of_feed">No more items</string>
 </resources>

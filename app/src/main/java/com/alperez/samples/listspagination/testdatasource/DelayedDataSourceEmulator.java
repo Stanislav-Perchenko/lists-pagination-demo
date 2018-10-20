@@ -2,12 +2,12 @@ package com.alperez.samples.listspagination.testdatasource;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
 import com.alperez.samples.listspagination.utils.AppError;
+import com.alperez.samples.listspagination.utils.CommErrorEmulator;
 import com.alperez.samples.listspagination.utils.SimpleAppError;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
  * Created by stanislav.perchenko on 4/9/2018.
  */
 
-public abstract class DataSource<T> {
+public abstract class DelayedDataSourceEmulator<T> {
 
     public interface OnDataLoadListener<TR> {
         void onDataLoaded(int nPage, List<TR> items);
@@ -32,7 +32,7 @@ public abstract class DataSource<T> {
 
     public abstract T buildDataItem(int nPage, int pageSize, int inPageIndex);
 
-    public DataSource(Context ctx, int totalDataItems) {
+    public DelayedDataSourceEmulator(Context ctx, int totalDataItems) {
         this.totalDataItems = totalDataItems;
         executor = Executors.newFixedThreadPool(3);
         cManager = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -73,8 +73,22 @@ public abstract class DataSource<T> {
 
         @Override
         public void run() {
-            NetworkInfo netInfo = cManager.getActiveNetworkInfo();
-            if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            if (CommErrorEmulator.getInstance().isError()) {
+                //----  Emulate communication error  ----
+                try {
+                    Thread.sleep(4500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+
+                super.obtainMessage(-1, nPage, pageSize, new SimpleAppError() {
+                    @Override
+                    public String userMessage() {
+                        return "No Internet connection";
+                    }
+                }).sendToTarget();
+
+            } else {
                 try {
                     Thread.sleep(1400);
                 } catch (InterruptedException e) {
@@ -92,22 +106,7 @@ public abstract class DataSource<T> {
                 }
                 super.obtainMessage(0, nPage, pageSize, pageData).sendToTarget();
 
-            } else {
-                try {
-                    Thread.sleep(4500);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-
-                super.obtainMessage(-1, nPage, pageSize, new SimpleAppError() {
-                    @Override
-                    public String userMessage() {
-                        return "No Internet connection";
-                    }
-                }).sendToTarget();
             }
-
-
         }
 
         void onReleased() {

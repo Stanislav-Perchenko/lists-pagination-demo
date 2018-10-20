@@ -16,6 +16,7 @@ public abstract class LauncherScreenItem {
     public abstract String subtitle();
     @Nullable
     public abstract String description();
+    @Nullable
     public abstract Class<? extends Activity> activityClass();
 
     public static Builder builder() {

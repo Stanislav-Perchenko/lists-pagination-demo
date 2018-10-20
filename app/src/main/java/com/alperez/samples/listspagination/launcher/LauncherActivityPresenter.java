@@ -75,17 +75,19 @@ public class LauncherActivityPresenter extends BasePresenter<LauncherScreenView>
 
                 List<LauncherScreenItem> data = new ArrayList<>(jItems.length());
                 for (int i=0; i<jItems.length(); i++) {
+                    JSONObject jItem = jItems.getJSONObject(i);
+                    Class<? extends AppCompatActivity> cls;
                     try {
-                        JSONObject jItem = jItems.getJSONObject(i);
-                        data.add(LauncherScreenItem.builder()
-                                .setTitle(jItem.getString("title"))
-                                .setSubtitle(jItem.optString("subtitle", null))
-                                .setDescription(jItem.optString("description", null))
-                                .setActivityClass((Class<? extends AppCompatActivity>) Class.forName(jItem.getString("screenClassName")))
-                                .build());
+                        cls = (Class<? extends AppCompatActivity>) Class.forName(jItem.getString("screenClassName"));
                     } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
+                        cls = null;
                     }
+                    data.add(LauncherScreenItem.builder()
+                            .setTitle(jItem.getString("title"))
+                            .setSubtitle(jItem.optString("subtitle", null))
+                            .setDescription(jItem.optString("description", null))
+                            .setActivityClass(cls)
+                            .build());
                 }
                 return data;
             } catch (Exception e) {

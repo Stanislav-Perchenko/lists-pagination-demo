@@ -17,6 +17,10 @@ public class CommErrorEmulator implements CompoundButton.OnCheckedChangeListener
         error = false;
     }
 
+    public synchronized void toggleError() {
+        error = !error;
+    }
+
     @Override
     public synchronized void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         error = isChecked;

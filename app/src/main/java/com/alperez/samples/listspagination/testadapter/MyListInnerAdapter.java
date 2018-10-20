@@ -19,10 +19,10 @@ import java.util.List;
  * Created by stanislav.perchenko on 4/9/2018.
  */
 
-public class MyListAdapter extends ArrayAdapter<ListItemModel> {
+public class MyListInnerAdapter extends ArrayAdapter<ListItemModel> {
     private final LayoutInflater inflater;
 
-    public MyListAdapter(@NonNull Context context, @NonNull List<ListItemModel> objects) {
+    public MyListInnerAdapter(@NonNull Context context, @NonNull List<ListItemModel> objects) {
         super(context, R.layout.item_list, objects);
         inflater = LayoutInflater.from(context);
     }

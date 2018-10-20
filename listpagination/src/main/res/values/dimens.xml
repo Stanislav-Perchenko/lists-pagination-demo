@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="load_more_view_size">48dp</dimen>
+    <dimen name="load_more_container_height">72dp</dimen>
+</resources>
