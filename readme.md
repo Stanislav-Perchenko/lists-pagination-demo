@@ -9,13 +9,15 @@ The project is splited on several modules. Module "listpagination" contains all 
 
 
 The main "app" module contains launcher screen and demo framework for the paginated lists, which includes:
-demo activities (BaseDemoActivity, ListPaginationDemoActivity, RecyclerPaginationDemoActivity);
+demo activities (*BaseDemoActivit*, ListPaginationDemoActivity, RecyclerPaginationDemoActivity);
 demo adapters (MyListInnerAdapter, MyPaginatedRecyclerAdapter);
 test data source (ListItemModel, PaginatedPresenter, DelayedDataSourceEmulator, CommunicationErrorEmulator).
 
 
-This project also demonstrates the implementation of MVP application architecture pattern (see combination of LauncherActivity+LauncherActivityPresenter+LauncherScreenView and ListPaginationDemoActivity+RecyclerPaginationDemoActivity+IPaginatedListView+PaginatedPresenter)
+This project also demonstrates the implementation of MVP application architecture pattern see combination of:
+- LauncherActivity+LauncherActivityPresenter+LauncherScreenView
+- ListPaginationDemoActivity+RecyclerPaginationDemoActivity+IPaginatedListView+PaginatedPresenter)
 
 It also demonstrates using of the Android Data binding library:
-- LauncherActivity + activity_launcher.xml;
+- LauncherActivity + activity_launcher.xml
 - LauncherAdapter + layncher_list_item.xml
