@@ -5,7 +5,7 @@ import android.widget.CompoundButton;
 /**
  * Created by stanislav.perchenko on 10/16/2018
  */
-public class CommErrorEmulator implements CompoundButton.OnCheckedChangeListener {
+public class CommunicationErrorEmulator implements CompoundButton.OnCheckedChangeListener {
 
     private boolean error;
 
@@ -27,18 +27,18 @@ public class CommErrorEmulator implements CompoundButton.OnCheckedChangeListener
     }
 
     /**********************************************************************************************/
-    private static CommErrorEmulator instance;
+    private static CommunicationErrorEmulator instance;
 
-    public static CommErrorEmulator getInstance() {
+    public static CommunicationErrorEmulator getInstance() {
         if (instance == null) {
-            synchronized (CommErrorEmulator.class) {
+            synchronized (CommunicationErrorEmulator.class) {
                 if (instance == null) {
-                    instance = new CommErrorEmulator();
+                    instance = new CommunicationErrorEmulator();
                 }
             }
         }
         return instance;
     }
 
-    private CommErrorEmulator() {}
+    private CommunicationErrorEmulator() {}
 }

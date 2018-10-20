@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 
 import com.alperez.samples.listspagination.utils.AppError;
-import com.alperez.samples.listspagination.utils.CommErrorEmulator;
+import com.alperez.samples.listspagination.utils.CommunicationErrorEmulator;
 import com.alperez.samples.listspagination.utils.SimpleAppError;
 
 import java.util.ArrayList;
@@ -73,7 +73,7 @@ public abstract class DelayedDataSourceEmulator<T> {
 
         @Override
         public void run() {
-            if (CommErrorEmulator.getInstance().isError()) {
+            if (CommunicationErrorEmulator.getInstance().isError()) {
                 //----  Emulate communication error  ----
                 try {
                     Thread.sleep(4500);

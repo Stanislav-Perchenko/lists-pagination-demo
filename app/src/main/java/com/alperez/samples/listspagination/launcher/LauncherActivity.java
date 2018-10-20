@@ -12,8 +12,7 @@ import android.widget.Toast;
 import com.alperez.samples.listspagination.GlobalConstants;
 import com.alperez.samples.listspagination.R;
 import com.alperez.samples.listspagination.databinding.ActivityLauncherBinding;
-import com.alperez.samples.listspagination.testactivity.BaseDemoActivity;
-import com.alperez.samples.listspagination.utils.CommErrorEmulator;
+import com.alperez.samples.listspagination.utils.CommunicationErrorEmulator;
 import com.alperez.utils.UniformVerticalRecyclerItemSpace;
 
 
@@ -32,7 +31,7 @@ public class LauncherActivity extends AppCompatActivity implements LauncherScree
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_launcher);
-        binding.setSwitchListener(CommErrorEmulator.getInstance());
+        binding.setSwitchListener(CommunicationErrorEmulator.getInstance());
 
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
         binding.recycler.addItemDecoration(new UniformVerticalRecyclerItemSpace(getResources().getDimensionPixelSize(R.dimen.list_card_item_space)));
@@ -46,8 +45,8 @@ public class LauncherActivity extends AppCompatActivity implements LauncherScree
     @Override
     protected void onResume() {
         super.onResume();
-        if (binding.swConnFailure.isChecked() != CommErrorEmulator.getInstance().isError()) {
-            binding.swConnFailure.setChecked(CommErrorEmulator.getInstance().isError());
+        if (binding.swConnFailure.isChecked() != CommunicationErrorEmulator.getInstance().isError()) {
+            binding.swConnFailure.setChecked(CommunicationErrorEmulator.getInstance().isError());
         }
     }
 

@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.alperez.samples.listspagination.GlobalConstants;
 import com.alperez.samples.listspagination.R;
-import com.alperez.samples.listspagination.utils.CommErrorEmulator;
+import com.alperez.samples.listspagination.utils.CommunicationErrorEmulator;
 
 /**
  * Created by stanislav.perchenko on 10/20/2018
@@ -60,7 +60,7 @@ public abstract class BaseDemoActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.menu_action_comm_error).getIcon().setLevel(CommErrorEmulator.getInstance().isError() ? 0 : 1);
+        menu.findItem(R.id.menu_action_comm_error).getIcon().setLevel(CommunicationErrorEmulator.getInstance().isError() ? 0 : 1);
         return true;
     }
 
@@ -71,7 +71,7 @@ public abstract class BaseDemoActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.menu_action_comm_error:
-                CommErrorEmulator.getInstance().toggleError();
+                CommunicationErrorEmulator.getInstance().toggleError();
                 invalidateOptionsMenu();
                 return true;
             default:
