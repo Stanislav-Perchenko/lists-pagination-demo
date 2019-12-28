@@ -1,18 +1,19 @@
 package com.alperez.samples.listspagination.testactivity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ListView;
+
+import androidx.annotation.Nullable;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.alperez.pagination.adapter.PaginatedListAdapter;
 import com.alperez.pagination.widget.LoadMoreView;
 import com.alperez.samples.listspagination.GlobalConstants;
 import com.alperez.samples.listspagination.R;
 import com.alperez.samples.listspagination.testadapter.MyListInnerAdapter;
-import com.alperez.samples.listspagination.testdatasource.ListItemModel;
 import com.alperez.samples.listspagination.testdatasource.IPaginatedListView;
+import com.alperez.samples.listspagination.testdatasource.ListItemModel;
 import com.alperez.samples.listspagination.testdatasource.PaginatedPresenter;
 import com.alperez.samples.listspagination.utils.AppError;
 

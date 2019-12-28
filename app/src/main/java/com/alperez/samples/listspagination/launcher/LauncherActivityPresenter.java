@@ -2,7 +2,8 @@ package com.alperez.samples.listspagination.launcher;
 
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.alperez.samples.listspagination.BuildConfig;
 import com.alperez.samples.listspagination.utils.BasePresenter;

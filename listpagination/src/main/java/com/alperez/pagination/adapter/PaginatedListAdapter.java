@@ -1,7 +1,6 @@
 package com.alperez.pagination.adapter;
 
 import android.database.DataSetObserver;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.WrapperListAdapter;
+
+import androidx.annotation.NonNull;
 
 import com.alperez.pagination.widget.LoadMoreView;
 
