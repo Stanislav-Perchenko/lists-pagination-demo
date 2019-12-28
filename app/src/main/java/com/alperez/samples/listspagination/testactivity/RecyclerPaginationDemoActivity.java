@@ -29,7 +29,7 @@ public class RecyclerPaginationDemoActivity extends BaseDemoActivity implements 
     private View vNoData;
     private LoadMoreView vOnScreenReload;
 
-    //private MyPaginatedRecyclerAdapter mAdapter;
+    private MyPaginatedRecyclerAdapter mAdapter;
 
     private PaginatedPresenter mPresenter;
 
